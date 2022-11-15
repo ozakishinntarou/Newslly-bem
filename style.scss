@@ -1,0 +1,226 @@
+@charset "utf-8";
+
+@mixin inner ($w: 800px) {
+    margin-right: auto;
+    margin-left: auto;
+    width: 88%;
+    max-width: ($w);
+}
+
+@mixin flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+@mixin py ($y: 60px) {
+    padding: $y 0px;
+}
+
+@mixin mb($m: 10px) {
+    margin-bottom: $m;
+
+}
+
+@mixin h2 {
+    font-size: 24px;
+    color: $color-black;
+    @include mb(30px);
+    padding-left: 10px;
+    border-left: $color-pink solid 10px;
+}
+
+@mixin h3 {
+    font-size: 18px;
+    color: $color-black;
+    @include mb(15px);
+}
+
+@mixin btn ($b: $color-pink) {
+    display: block;
+    width: 160px;
+    margin-top: 25px;
+    margin-left: auto;
+    padding: 14px;
+    background-color: $b;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+$color-gury: #888888;
+$color-black: #202124;
+$color-pink: #FA6980;
+$color-gury2: #F6F6F6;
+
+body {
+    font-size: 14px;
+    font-family: Helvetica, sans-serif, Arial, ;
+    color: $color-gury;
+    line-height: (24/14);
+    letter-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a {
+    text-decoration: none;
+}
+
+.time {
+    background: url(./images/icon_time.png) left top 4px no-repeat;
+    align-items: center;
+    padding-left: 26px;
+}
+
+/*block*/
+/*header*/
+.header {
+    @include py(30px);
+
+    &__inner {
+        @include inner;
+    }
+
+    &__logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/*footer*/
+.footer {
+    padding: 100px 0 40px;
+    background-color: $color-black;
+
+    &__inner {
+        @include inner;
+    }
+
+    &__copy {
+        color: #BBBBBB;
+        font-size: 12px;
+    }
+}
+
+/*unit*/
+.unit {
+    padding-bottom: 60px;
+
+    &__inner {
+        @include inner;
+    }
+
+    &__list {
+        @include flex;
+    }
+
+    &__catch {
+        color: $color-pink;
+        @include mb;
+    }
+
+    &__title {
+        @include h3;
+    }
+
+    &__border {
+        border-bottom: 1px solid #DDDDDD;
+        padding-bottom: 10px;
+    }
+
+
+    &__text {
+        @include mb(20px);
+    }
+
+    &__btn {
+        @include btn($color-black);
+    }
+}
+
+.card {
+    background-color: #FFFFFF;
+
+    &__box {
+        padding: 35px;
+    }
+
+    &__title {
+        @include h3;
+    }
+
+    &__btn {
+        @include btn;
+    }
+}
+
+/*main*/
+/*news*/
+.news {
+    padding: 30px 0 60px;
+
+    &__inner {
+        @include inner;
+    }
+
+    &__title {
+        @include h2;
+    }
+
+    &__item {
+        width: (380/800)*100%;
+    }
+}
+
+/*trending*/
+.trending {
+    @include py;
+    background-color: $color-gury2;
+
+    &__inner {
+        @include inner;
+    }
+
+    &__title {
+        @include h2;
+    }
+
+    &__list {
+        @include flex;
+    }
+
+    &__item {
+        width: (380/800*100%);
+    }
+
+}
+
+/*discovery*/
+.discovery {
+    background-color: $color-gury2;
+    @include py;
+
+    &__inner {
+        @include inner;
+    }
+
+    &__title {
+        @include h2;
+    }
+
+    &__list {
+        @include flex;
+    }
+
+    &__item {
+        width: (240/800*100%);
+    }
+}
